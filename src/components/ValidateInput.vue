@@ -17,8 +17,10 @@
 import { defineComponent, PropType, reactive } from "vue";
 
 interface ruleType {
-  type: "required" | "email";
-  message: string;
+  type: "required" | "email" | "range";
+  message?: string;
+  max?: { message: string; length: number };
+  min?: { message: string; length: number };
 }
 
 export type rulesProp = ruleType[];
@@ -45,7 +47,8 @@ export default defineComponent({
     const handleValidate = () => {
       const allPass = props.rules?.every((rule) => {
         let passed = true;
-        inputInfo.message = rule.message;
+        const length = inputInfo.val.trim().length;
+        inputInfo.message = rule.message || "";
         switch (rule.type) {
           case "required":
             passed = inputInfo.val.trim() !== "";
@@ -53,11 +56,22 @@ export default defineComponent({
           case "email":
             passed = emailReg.test(inputInfo.val);
             break;
+          case "range":
+            if (rule.max) {
+              passed = length < rule?.max.length;
+              inputInfo.message = rule.max?.message;
+            }
+            if (rule.min) {
+              passed = length > rule?.min.length;
+              inputInfo.message = rule.min?.message;
+            }
+            break;
           default:
             break;
         }
         return passed;
       });
+
       inputInfo.error = !allPass;
     };
     return {

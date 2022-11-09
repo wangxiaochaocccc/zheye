@@ -44,7 +44,8 @@ export default defineComponent({
     };
     const rules: rulesProp = [
       { type: "required", message: "不能为空" },
-      { type: "email", message: "邮箱格式错误" },
+      // { type: "email", message: "邮箱格式错误" },
+      { type: "range", min: { message: "最小不能少于3位", length: 3 } },
     ];
     return {
       columnData,
