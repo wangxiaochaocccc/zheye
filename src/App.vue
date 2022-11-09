@@ -1,5 +1,6 @@
 <template>
   <global-header :user="UserInfo" />
+  <vailidate-input :rules="rules" />
   <div class="container">
     <column-list :column="columnData" />
   </div>
@@ -10,11 +11,14 @@ import { defineComponent } from "vue";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ColumnList, { columnType } from "./components/ColumnList.vue";
 import GlobalHeader, { UserType } from "./components/GlobalHeader.vue";
+import VailidateInput, { rulesProp } from "./components/ValidateInput.vue";
+
 export default defineComponent({
   name: "App",
   components: {
     ColumnList,
     GlobalHeader,
+    VailidateInput,
   },
   setup() {
     const columnData: columnType[] = [
@@ -38,9 +42,14 @@ export default defineComponent({
       name: "小王",
       id: 1,
     };
+    const rules: rulesProp = [
+      { type: "required", message: "不能为空" },
+      { type: "email", message: "邮箱格式错误" },
+    ];
     return {
       columnData,
       UserInfo,
+      rules,
     };
   },
 });
