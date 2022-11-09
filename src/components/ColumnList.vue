@@ -1,7 +1,7 @@
 <template>
-  <div class="row">
+  <div class="row text-center">
     <div v-for="item in column" :key="item.id" class="col-4 mb-4">
-      <div class="card-body h-100 shadow-sm">
+      <div class="card-body h-100 shadow-sm border rounded">
         <img
           :src="item.avatar"
           class="w-30 border rounded-circle my-3 border-light"
