@@ -1,6 +1,6 @@
 <template>
   <global-header :user="UserInfo" />
-  <vailidate-input :rules="rules" />
+  <vailidate-input :rules="rules" placeholder="请输入邮箱地址" type="text" />
   <div class="container">
     <column-list :column="columnData" />
   </div>

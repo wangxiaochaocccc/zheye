@@ -1,7 +1,7 @@
 <template>
   <div class="validate-input-container pb-3">
     <input
-      type="text"
+      v-bind="$attrs"
       class="form-control"
       :class="{ 'is-invalid': inputInfo.error }"
       v-model="inputInfo.val"
