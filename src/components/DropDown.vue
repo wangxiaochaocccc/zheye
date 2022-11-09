@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown">
+  <div class="dropdown" ref="dropRef">
     <button
       class="btn btn-outline-light dropdown-toggle"
       type="button"
@@ -20,7 +20,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, watch } from "vue";
+import useClickOutside from "../hooks/useClickOutside";
+
 export default defineComponent({
   name: "DropDown",
   props: {
@@ -35,9 +37,18 @@ export default defineComponent({
     const handleDropDown = () => {
       dropDownVisible.value = !dropDownVisible.value;
     };
+    // 点击区域外关闭dropdown
+    const dropRef = ref<null | HTMLElement>(null);
+    const isOutside = useClickOutside(dropRef);
+    watch(isOutside, (val) => {
+      if (val) {
+        dropDownVisible.value = false;
+      }
+    });
     return {
       dropDownVisible,
       handleDropDown,
+      dropRef,
     };
   },
 });
