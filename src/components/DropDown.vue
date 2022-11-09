@@ -1,23 +1,26 @@
 <template>
   <div class="dropdown">
     <button
-      class="btn btn-outline-secondary border-white text-white dropdown-toggle"
+      class="btn btn-outline-light dropdown-toggle"
       type="button"
       data-bs-toggle="dropdown"
       aria-expanded="false"
+      @click.prevent="handleDropDown"
     >
       {{ title }}
     </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <ul
+      class="dropdown-menu"
+      :style="{ display: 'block' }"
+      v-if="dropDownVisible"
+    >
+      <slot />
     </ul>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "DropDown",
   props: {
@@ -25,6 +28,17 @@ export default defineComponent({
       type: String,
       required: true,
     },
+  },
+  setup() {
+    const dropDownVisible = ref(false);
+    // 触发下拉
+    const handleDropDown = () => {
+      dropDownVisible.value = !dropDownVisible.value;
+    };
+    return {
+      dropDownVisible,
+      handleDropDown,
+    };
   },
 });
 </script>
