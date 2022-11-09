@@ -1,12 +1,19 @@
 <template>
-  <ul>
-    <li v-for="item in column" :key="item.id">
-      <img :src="item.avatar" alt="" />
-      <div class="title">{{ item.title }}</div>
-      <div class="desc">{{ item.description }}</div>
-      <button>进入专栏</button>
-    </li>
-  </ul>
+  <div class="row">
+    <div v-for="item in column" :key="item.id" class="col-4 mb-4">
+      <div class="card-body h-100 shadow-sm">
+        <img
+          :src="item.avatar"
+          class="w-30 border rounded-circle my-3 border-light"
+        />
+        <h5 class="card-title mb-2">{{ item.title }}</h5>
+        <p class="card-text text-left">
+          {{ item.description }}
+        </p>
+        <a href="#" class="btn btn-outline-primary mb-3">进入专栏</a>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
