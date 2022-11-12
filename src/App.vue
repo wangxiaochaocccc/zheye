@@ -53,8 +53,8 @@ export default defineComponent({
       // { type: "email", message: "邮箱格式错误" },
       { type: "range", min: { message: "最小不能少于3位", length: 3 } },
     ];
-    const onSubmit = () => {
-      console.log(1111);
+    const onSubmit = (res: boolean) => {
+      console.log(111122, res);
     };
     return {
       columnData,

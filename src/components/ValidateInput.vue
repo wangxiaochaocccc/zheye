@@ -15,6 +15,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, reactive } from "vue";
+import { mitter } from "./ValidateForm.vue";
 
 interface ruleType {
   type: "required" | "email" | "range";
@@ -45,35 +46,41 @@ export default defineComponent({
     });
     // 校验逻辑
     const handleValidate = () => {
-      const allPass = props.rules?.every((rule) => {
-        let passed = true;
-        const length = inputInfo.val.trim().length;
-        inputInfo.message = rule.message || "";
-        switch (rule.type) {
-          case "required":
-            passed = inputInfo.val.trim() !== "";
-            break;
-          case "email":
-            passed = emailReg.test(inputInfo.val);
-            break;
-          case "range":
-            if (rule.max) {
-              passed = length < rule?.max.length;
-              inputInfo.message = rule.max?.message;
-            }
-            if (rule.min) {
-              passed = length > rule?.min.length;
-              inputInfo.message = rule.min?.message;
-            }
-            break;
-          default:
-            break;
-        }
-        return passed;
-      });
-
-      inputInfo.error = !allPass;
+      if (props.rules) {
+        const allPass = props.rules.every((rule) => {
+          let passed = true;
+          const length = inputInfo.val.trim().length;
+          inputInfo.message = rule.message || "";
+          switch (rule.type) {
+            case "required":
+              passed = inputInfo.val.trim() !== "";
+              break;
+            case "email":
+              passed = emailReg.test(inputInfo.val);
+              break;
+            case "range":
+              if (rule.max) {
+                passed = length < rule?.max.length;
+                inputInfo.message = rule.max?.message;
+              }
+              if (rule.min) {
+                passed = length > rule?.min.length;
+                inputInfo.message = rule.min?.message;
+              }
+              break;
+            default:
+              break;
+          }
+          return passed;
+        });
+        inputInfo.error = !allPass;
+        return allPass;
+      }
+      return true;
     };
+
+    mitter.emit("form-item-validate", handleValidate);
+
     return {
       inputInfo,
       handleValidate,
