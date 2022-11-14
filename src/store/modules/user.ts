@@ -1,10 +1,4 @@
-interface stateProps {
-  user: {
-    name: string;
-    id?: number;
-    isLogin?: boolean;
-  };
-}
+import { stateProps } from "../index";
 
 export default {
   namespaced: true,

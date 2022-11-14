@@ -18,6 +18,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useStore } from "vuex";
+import { stateProps } from "@/store/index";
 // import { testData } from "../testData";
 // import ColumnList from "../components/ColumnList.vue";
 
@@ -25,6 +27,10 @@ export default defineComponent({
   name: "HomePage",
   components: {
     // ColumnList,
+  },
+  setup() {
+    const store = useStore<stateProps>();
+    console.log(store.state.user.isLogin);
   },
 });
 </script>
