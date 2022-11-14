@@ -7,9 +7,8 @@ const service = axios.create({
 
 const icode = "48E751A72884E66B";
 service.interceptors.request.use((config) => {
-  if (config.params) {
-    config.params = { ...config.params, icode };
-  } else if (config.data instanceof FormData) {
+  config.params = { ...config.params, icode };
+  if (config.data instanceof FormData) {
     config.data.append("icode", icode);
   } else {
     config.data = { ...config.data, icode };
