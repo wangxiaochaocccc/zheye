@@ -14,12 +14,14 @@ specifiers:
   typescript: ~4.5.5
   vue: ^3.2.13
   vue-router: ^4.1.6
+  vuex: ^4.1.0
 
 dependencies:
   bootstrap: registry.npmmirror.com/bootstrap/5.2.2_@popperjs+core@2.11.6
   mitt: registry.npmmirror.com/mitt/3.0.0
   vue: registry.npmmirror.com/vue/3.2.41
   vue-router: registry.npmmirror.com/vue-router/4.1.6_vue@3.2.41
+  vuex: registry.npmmirror.com/vuex/4.1.0_vue@3.2.41
 
 devDependencies:
   '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.42.1_bp5zxxj7gyuzfi4tago6p2z6qi
@@ -7031,6 +7033,18 @@ packages:
       '@vue/runtime-dom': registry.npmmirror.com/@vue/runtime-dom/3.2.41
       '@vue/server-renderer': registry.npmmirror.com/@vue/server-renderer/3.2.41_vue@3.2.41
       '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.41
+
+  registry.npmmirror.com/vuex/4.1.0_vue@3.2.41:
+    resolution: {integrity: sha512-hmV6UerDrPcgbSy9ORAtNXDr9M4wlNP4pEFKye4ujJF8oqgFFuxDCdOLS3eNoRTtq5O3hoBDh9Doj1bQMYHRbQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vuex/-/vuex-4.1.0.tgz}
+    id: registry.npmmirror.com/vuex/4.1.0
+    name: vuex
+    version: 4.1.0
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': registry.npmmirror.com/@vue/devtools-api/6.4.5
+      vue: registry.npmmirror.com/vue/3.2.41
+    dev: false
 
   registry.npmmirror.com/watchpack/2.4.0:
     resolution: {integrity: sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/watchpack/-/watchpack-2.4.0.tgz}
