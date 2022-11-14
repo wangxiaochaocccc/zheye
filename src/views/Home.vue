@@ -18,7 +18,6 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { useStore } from "vuex";
 // import { testData } from "../testData";
 // import ColumnList from "../components/ColumnList.vue";
 
@@ -26,10 +25,6 @@ export default defineComponent({
   name: "HomePage",
   components: {
     // ColumnList,
-  },
-  setup() {
-    const store = useStore();
-    console.log(store);
   },
 });
 </script>

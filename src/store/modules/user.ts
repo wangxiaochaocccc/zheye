@@ -1,14 +1,23 @@
-interface State {
-  count: number;
+interface stateProps {
+  user: {
+    name: string;
+    id?: number;
+    isLogin?: boolean;
+  };
 }
+
 export default {
   namespaced: true,
   state: () => ({
-    count: 1,
+    user: {
+      name: "小王",
+      id: 1,
+      isLogin: false,
+    },
   }),
   mutations: {
-    addCount(state: State) {
-      state.count++;
+    login(state: stateProps) {
+      state.user = { ...state.user, isLogin: true };
     },
   },
 };
