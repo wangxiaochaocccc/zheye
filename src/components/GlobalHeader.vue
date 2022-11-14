@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-dark bg-primary mb-4">
-    <div class="container justify-space-between align-center">
-      <a class="navbar-brand" href="#">者也专栏</a>
+  <nav class="navbar-dark bg-primary mb-4">
+    <div class="w-75 navbar mx-auto justify-space-between align-center">
+      <a class="navbar-brand text-white" href="#">者也专栏</a>
       <ul v-if="!user.isLogin" class="list-inline align-center mb-0">
         <li class="list-inline-item">
           <a href="#" class="btn btn-outline-light my-2">登录</a>

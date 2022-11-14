@@ -1,6 +1,8 @@
 <template>
-  <global-header :user="store.state" />
-  <router-view />
+  <div class="container-fluid px-0 flex-shrink-0">
+    <global-header :user="store.state" />
+    <router-view />
+  </div>
 </template>
 
 <script lang="ts">
