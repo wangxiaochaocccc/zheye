@@ -13,11 +13,13 @@ specifiers:
   mitt: ^3.0.0
   typescript: ~4.5.5
   vue: ^3.2.13
+  vue-router: ^4.1.6
 
 dependencies:
   bootstrap: registry.npmmirror.com/bootstrap/5.2.2_@popperjs+core@2.11.6
   mitt: registry.npmmirror.com/mitt/3.0.0
   vue: registry.npmmirror.com/vue/3.2.41
+  vue-router: registry.npmmirror.com/vue-router/4.1.6_vue@3.2.41
 
 devDependencies:
   '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.42.1_bp5zxxj7gyuzfi4tago6p2z6qi
@@ -1241,6 +1243,12 @@ packages:
       - walrus
       - whiskers
     dev: true
+
+  registry.npmmirror.com/@vue/devtools-api/6.4.5:
+    resolution: {integrity: sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.4.5.tgz}
+    name: '@vue/devtools-api'
+    version: 6.4.5
+    dev: false
 
   registry.npmmirror.com/@vue/eslint-config-typescript/9.1.0_xigzwcudqy6jqfvhliz5py2jtu:
     resolution: {integrity: sha512-j/852/ZYQ5wDvCD3HE2q4uqJwJAceer2FwoEch1nFo+zTOsPrbzbE3cuWIs3kvu5hdFsGTMYwRwjI6fqZKDMxQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/eslint-config-typescript/-/eslint-config-typescript-9.1.0.tgz}
@@ -6985,6 +6993,18 @@ packages:
       vue: registry.npmmirror.com/vue/3.2.41
       webpack: registry.npmmirror.com/webpack/5.74.0
     dev: true
+
+  registry.npmmirror.com/vue-router/4.1.6_vue@3.2.41:
+    resolution: {integrity: sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-router/-/vue-router-4.1.6.tgz}
+    id: registry.npmmirror.com/vue-router/4.1.6
+    name: vue-router
+    version: 4.1.6
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': registry.npmmirror.com/@vue/devtools-api/6.4.5
+      vue: registry.npmmirror.com/vue/3.2.41
+    dev: false
 
   registry.npmmirror.com/vue-style-loader/4.1.3:
     resolution: {integrity: sha512-sFuh0xfbtpRlKfm39ss/ikqs9AbKCoXZBpHeVZ8Tx650o0k0q/YCM7FRvigtxpACezfq6af+a7JeqVTWvncqDg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-style-loader/-/vue-style-loader-4.1.3.tgz}
