@@ -1,13 +1,15 @@
 import { createStore } from "vuex";
 import user from "./modules/user";
+
+export type User = {
+  name: string;
+  id?: number;
+  isLogin?: boolean;
+};
 export interface stateProps {
-  user: {
-    name: string;
-    id?: number;
-    isLogin?: boolean;
-  };
+  user: User;
 }
-const store = createStore({
+const store = createStore<stateProps>({
   modules: {
     user,
   },

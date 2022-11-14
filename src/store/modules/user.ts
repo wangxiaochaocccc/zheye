@@ -1,13 +1,11 @@
-import { stateProps } from "../index";
+import { User, stateProps } from "../index";
 
 export default {
   namespaced: true,
-  state: () => ({
-    user: {
-      name: "小王",
-      id: 1,
-      isLogin: false,
-    },
+  state: (): User => ({
+    name: "小王",
+    id: 1,
+    isLogin: false,
   }),
   mutations: {
     login(state: stateProps) {

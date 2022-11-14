@@ -10,6 +10,22 @@ const publicRoutes = [
     path: "/login",
     name: "login",
     component: () => import("@/views/Login.vue"),
+    meta: {
+      redirectToIndex: true,
+    },
+  },
+  {
+    path: "/create",
+    name: "create",
+    component: () => import("@/views/Create.vue"),
+    meta: {
+      requiredLogin: true,
+    },
+  },
+  {
+    path: "/column/:id",
+    name: "ColumnDetail",
+    component: () => import("@/views/ColumnDetail.vue"),
   },
 ];
 const router = createRouter({
